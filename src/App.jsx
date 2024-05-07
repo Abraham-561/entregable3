@@ -7,11 +7,9 @@ import LocationInfo from "./components/LocationInfo";
 import ResidentCard from "./components/ResidentCard";
 import FormSearch from "./components/FormSearch";
 
-
 function App() {
   const randomLocation = getRandomNumber(126);
   const [locationSelected, setLocationSelected] = useState(randomLocation);
- 
 
   const url = `https://rickandmortyapi.com/api/location/${
     locationSelected || getRandomNumber(126)
@@ -24,19 +22,14 @@ function App() {
 
   return (
     <div className="app">
-      
-     
-      <FormSearch 
-      setLocationSelected= {setLocationSelected}
-       />
-      
+      <FormSearch setLocationSelected={setLocationSelected} />
+
       {
-      hasError 
-      ? (  <h2 className="app__error">
-              ❌Hey! you must provide an id from 1 to 126🫠{" "}
-          </h2>
-        ) 
-        : (
+      hasError ? (
+        <h2 className="app__error">
+          ❌Hey! you must provide an id from 1 to 126🫠{" "}
+        </h2>
+      ) : (
         <>
           <LocationInfo location={location} />
           <div className="container__resident">
@@ -46,6 +39,7 @@ function App() {
           </div>
         </>
       )}
+      ;
     </div>
   );
 }

@@ -14,10 +14,10 @@ const FormSearch = ( { setLocationSelected } ) => {
     <section>
       <img className="image" src="imagenFondo.jpg" alt="" />
     </section>
-    <br />
+    <br className="br" />
    
    <form className="form" onSubmit={handleSubmit}>
-        <input className="form__input" ref={inputSearch} type="text" />
+        <input className="form__input" ref={inputSearch} type="number" />
         <button className="form__btn">Search</button>
     </form>
 
